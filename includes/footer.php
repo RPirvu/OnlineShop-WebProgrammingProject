@@ -1,8 +1,8 @@
 <footer class="main-footer" style="background-color: darkgray">
     <div class="container">
       <div class="pull-right hidden-xs">
-        <b>All rights reserved</b>
+        <b>Restanță PW</b>
       </div>
-      <strong>Copyright &copy; 2020 Brought to You By <a href="https://itsourcecode.com/">IT SOURCECODE</a></strong>
+      <strong>Copyright &copy; 2021 Alex & Robert & Denis </strong>
     </div>
 </footer>
