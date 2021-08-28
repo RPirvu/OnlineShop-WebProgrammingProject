@@ -1,19 +1,18 @@
 <?php include 'includes/session.php'; ?>
+<?php include 'includes/header.php'; ?>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>AL&ICA</title>
+        <title>PW</title>
     </head>
-    <body>
-        <div class = "content">
-            <div class = "container">
-                <div class = "col-md-12">
-                    <h1>Contactează-ne</h1><!--partea de body-->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class = "wrapper">
+            <?php include 'includes/navbar.php'; ?>
                 </div>
             </div>
 			
+            <div class="content-wrapper">
             <div class="container">
-            <div class="col-md-12">
             <hr>
             </div>
             </div>
@@ -49,6 +48,10 @@
                     </p>
                     </div>
                 </form>
+                <div class="col-sm-3">
+	        		<?php include 'includes/sidebar.php'; ?>
+	        	</div>
+            <?php include 'includes/footer.php'; ?>
     </div>
 </div>			            
 </div><!--partea de body-->
@@ -95,6 +98,8 @@
             return valid;
         }
 </script>
+<?php include 'includes/scripts.php'; ?>
 </body>
     </body>
+    </html>
 
