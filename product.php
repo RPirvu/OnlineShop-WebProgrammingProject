@@ -35,7 +35,7 @@
 	var js, fjs = d.getElementsByTagName(s)[0];
 	if (d.getElementById(id)) return;
 	js = d.createElement(s); js.id = id;
-	js.src = '//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4';
+	js.src = '//connect.facebook.net/ro_RO/sdk.js#xfbml=1&version=v11.0&appId=250698633449404&autoLogAppEvents=1';
 	fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 
@@ -51,14 +51,14 @@
 	      <!-- Main content -->
 	      <section class="content">
 	        <div class="row">
-	        	<div class="col-sm-9">
+	        	<div class="col-sm-9 center">
 	        		<div class="callout" id="callout" style="display:none">
 	        			<button type="button" class="close"><span aria-hidden="true">&times;</span></button>
 	        			<span class="message"></span>
 	        		</div>
 		            <div class="row">
-		            	<div class="col-sm-6">
-		            		<img src="<?php echo (!empty($product['photo'])) ? 'images/'.$product['photo'] : 'images/noimage.jpg'; ?>" width="100%" class="zoom" data-magnify-src="images/large-<?php echo $product['photo']; ?>">
+		            	<div class="col">
+		            		<img src="<?php echo (!empty($product['photo'])) ? 'images/'.$product['photo'] : 'images/noimage.jpg'; ?>" width="400px" class="zoom" data-magnify-src="images/large-<?php echo $product['photo']; ?>">
 		            		<br><br>
 		            		<form class="form-inline" id="productForm">
 		            			<div class="form-group">
