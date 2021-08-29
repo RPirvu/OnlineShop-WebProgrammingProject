@@ -1,6 +1,7 @@
 <?php
 	use PHPMailer\PHPMailer\PHPMailer;
 	use PHPMailer\PHPMailer\Exception;
+	use PHPMailer\PHPMailer\SMTP;
 
 	include 'includes/session.php';
 
@@ -15,12 +16,12 @@
 		$_SESSION['lastname'] = $lastname;
 		$_SESSION['email'] = $email;
 
-		if(!isset($_SESSION['captcha'])){
+		if(isset($_SESSION['captcha'])){
 			require('recaptcha/src/autoload.php');		
 			$recaptcha = new \ReCaptcha\ReCaptcha('6LevO1IUAAAAAFCCiOHERRXjh3VrHa5oywciMKcw', new \ReCaptcha\RequestMethod\SocketPost());
 			$resp = $recaptcha->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
 
-			if (!$resp->isSuccess()){
+			if ($resp->isSuccess()){
 		  		$_SESSION['error'] = 'Please answer recaptcha correctly';
 		  		header('location: signup.php');	
 		  		exit();	
@@ -64,42 +65,30 @@
 						<p>Email: ".$email."</p>
 						<p>Password: ".$_POST['password']."</p>
 						<p>Please click the link below to activate your account.</p>
-						<a href='http://localhost/ecommerce/activate.php?code=".$code."&user=".$userid."'>Activate Account</a>
+						<a href='http://localhost/ProiectPW/activate.php?code=".$code."&user=".$userid."'>Activate Account</a>
 					";
 
 					//Load phpmailer
 		    		require 'vendor/autoload.php';
 
+
 		    		$mail = new PHPMailer(true);                             
 				    try {
-				        //Server settings
-				        $mail->isSMTP();                                     
-				        $mail->Host = 'smtp.gmail.com';                      
-				        $mail->SMTPAuth = true;                               
-				        $mail->Username = 'testsourcecodester@gmail.com';     
-				        $mail->Password = 'mysourcepass';                    
-				        $mail->SMTPOptions = array(
-				            'ssl' => array(
-				            'verify_peer' => false,
-				            'verify_peer_name' => false,
-				            'allow_self_signed' => true
-				            )
-				        );                         
-				        $mail->SMTPSecure = 'ssl';                           
-				        $mail->Port = 465;                                   
 
-				        $mail->setFrom('testsourcecodester@gmail.com');
-				        
-				        //Recipients
-				        $mail->addAddress($email);              
-				        $mail->addReplyTo('testsourcecodester@gmail.com');
-				       
-				        //Content
-				        $mail->isHTML(true);                                  
-				        $mail->Subject = 'ECommerce Site Sign Up';
-				        $mail->Body    = $message;
-
-				        $mail->send();
+						$mail -> isSMTP();
+						$mail -> Host = "smtp.gmail.com";
+						$mail -> SMTPAuth = "true";
+						$mail -> Username = "sirrechs@gmail.com";
+						$mail -> Password = "";
+						$mail -> SMTPSecure = "tls";
+						$mail -> Port ="587";
+						
+						$mail -> Subject = "Test Email";
+						$mail -> setFrom("sirrechs@gmail.com");
+						$mail -> isHTML(true);
+						$mail ->Body = $message;
+						$mail -> addAddress($email);
+						$mail -> Send();
 
 				        unset($_SESSION['firstname']);
 				        unset($_SESSION['lastname']);
@@ -107,7 +96,8 @@
 
 				        $_SESSION['success'] = 'Account created. Check your email to activate.';
 				        header('location: signup.php');
-
+						
+						$mail -> smtpClose();
 				    } 
 				    catch (Exception $e) {
 				        $_SESSION['error'] = 'Message could not be sent. Mailer Error: '.$mail->ErrorInfo;

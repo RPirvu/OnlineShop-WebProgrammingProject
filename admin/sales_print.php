@@ -44,7 +44,7 @@
 
 		$conn = $pdo->open();
 
-		require_once('../tcpdf/tcpdf.php');  
+		require '../vendor/autoload.php';
 	    $pdf = new TCPDF('P', PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);  
 	    $pdf->SetCreator(PDF_CREATOR);  
 	    $pdf->SetTitle('Sales Report: '.$from_title.' - '.$to_title);  
@@ -61,7 +61,7 @@
 	    $pdf->AddPage();  
 	    $content = '';  
 	    $content .= '
-	      	<h2 align="center">TechSoft IT Solutions</h2>
+	      	<h2 align="center">ADR</h2>
 	      	<h4 align="center">SALES REPORT</h4>
 	      	<h4 align="center">'.$from_title." - ".$to_title.'</h4>
 	      	<table border="1" cellspacing="0" cellpadding="3">  
