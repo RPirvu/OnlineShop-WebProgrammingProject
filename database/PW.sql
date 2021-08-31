@@ -174,9 +174,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `type`, `firstname`, `lastname`, `address`, `contact_info`, `photo`, `status`, `activate_code`, `reset_code`, `created_on`) VALUES
-(1, 'admin@admin.com', '$2y$10$0SHFfoWzz8WZpdu9Qw//E.tWamILbiNCX7bqhy3od0gvK5.kSJ8N2', 1, 'IT', 'SOURCECODE', '', '', 'logo.png', 1, '', '', '2021-08-01'),
 (2, 'admin@gmail.com', '$2y$10$f5vJXzXB68MWwi3JBni9yuAlMKZYryCuF5z48V5X7QwKOF2aRI9RK', 1, 'Admin', '', '', '', '', 1, '', '', '2021-08-01'),
-(13, 'jude@yahoo.com', '$2y$10$THCiaipRqs51LgZNNSp7henK8SJ17r7abaH44slwjXavv/nVEw29e', 0, 'angel jude', 'suarez', 'Himamaylan City', '09458423256', 'cover.jpg', 1, '', '', '2020-12-30'),
 (14, 'test@gmail.com', '$2y$10$c5sIb.RQvtkWOf/LmVLnl.4ULQEGtb2TJp7BfRDPbLwQudRfVmcPa', 0, 'Test', 'Testus', '', '', '', 1, 's1uHqwC3IgtY', '', '2021-08-29'),
 (15, 'user@gmail.com', '$2y$10$NrkJdz6ffSa5VpTF.sFj2O/cLeSH1KPXhLF2r.THRCHw6yV9htmFq', 0, 'User', 'Utilizerus', '', '', '', 0, 'Fix23KSUEcvb', '', '2021-08-29'),
 (16, 'user1@gmail.com', '$2y$10$s4rLopnFroM02XlhcICAweJTboWeoHJjqBUphKO.lkyLaz8K/DnMC', 0, 'User', 'One', '', '', '', 0, 'lPergv8hA6Ey', '', '2021-08-29'),
@@ -184,7 +182,7 @@ INSERT INTO `users` (`id`, `email`, `password`, `type`, `firstname`, `lastname`,
 (24, 'test3@gmail.com', '$2y$10$Y68Q1ZUNbmzJMNehioZKDuIYKGXsb3aT5EKATqdG7AzxcpWDEjVYa', 0, 'Pirvu', 'Robert', '', '', '', 0, 'p7LcI42xGbTs', '', '2021-08-29'),
 (25, 'test4@gmail.com', '$2y$10$ZIPtICtr0B4hDTYlIFwoAONV2HQ68hfTEqQidDwyJtZ.pNBKwEYSO', 0, 'Pirvu', 'Robert', '', '', '', 0, '3rHhfdab2PU6', '', '2021-08-29'),
 (26, 'test5@gmail.com', '$2y$10$kRZCCOhMaGfyrZpaZxzNPeyoo1feqxJF54MgYmhizXO7bc7XXjU2W', 0, 'Pirvu', 'Robert', '', '', '', 0, '5iDIz9BpaANm', '', '2021-08-29'),
-(28, 'test55@gmail.com', '$2y$10$f5vJXzXB68MWwi3JBni9yuAlMKZYryCuF5z48V5X7QwKOF2aRI9RK', 0, 'Pirvu', 'Robert', '', '', '', 0, '6QGUjO4NLmuX', '', '2021-08-29')
+(28, 'test55@gmail.com', '$2y$10$f5vJXzXB68MWwi3JBni9yuAlMKZYryCuF5z48V5X7QwKOF2aRI9RK', 0, 'Pirvu', 'Robert', '', '', '', 0, '6QGUjO4NLmuX', '', '2021-08-29');
 
 --
 -- Indexes for dumped tables
