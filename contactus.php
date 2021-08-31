@@ -11,7 +11,7 @@
                 </div>
             </div>
 			
-            <div class="content-wrapper">
+            <div class="another-content">
             <div class="container">
             <hr>
             </div>
@@ -48,12 +48,13 @@
                     </p>
                     </div>
                 </form>
-                <div class="col-sm-3">
+                <div class="col">
 	        		<?php include 'includes/sidebar.php'; ?>
 	        	</div>
-            <?php include 'includes/footer.php'; ?>
     </div>
-</div>			            
+    
+</div>			    
+<?php include 'includes/footer.php'; ?>        
 </div><!--partea de body-->
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"
         type="text/javascript"></script>
