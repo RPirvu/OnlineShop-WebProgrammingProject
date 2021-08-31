@@ -180,12 +180,11 @@ INSERT INTO `users` (`id`, `email`, `password`, `type`, `firstname`, `lastname`,
 (14, 'test@gmail.com', '$2y$10$c5sIb.RQvtkWOf/LmVLnl.4ULQEGtb2TJp7BfRDPbLwQudRfVmcPa', 0, 'Test', 'Testus', '', '', '', 1, 's1uHqwC3IgtY', '', '2021-08-29'),
 (15, 'user@gmail.com', '$2y$10$NrkJdz6ffSa5VpTF.sFj2O/cLeSH1KPXhLF2r.THRCHw6yV9htmFq', 0, 'User', 'Utilizerus', '', '', '', 0, 'Fix23KSUEcvb', '', '2021-08-29'),
 (16, 'user1@gmail.com', '$2y$10$s4rLopnFroM02XlhcICAweJTboWeoHJjqBUphKO.lkyLaz8K/DnMC', 0, 'User', 'One', '', '', '', 0, 'lPergv8hA6Ey', '', '2021-08-29'),
-
 (23, 'test2@gmail.com', '$2y$10$HCx2/XZLgYDsbVlZkMMRmeUVlwinR1aLM6YAHHjirg8iZ1mPze9KW', 0, 'Pirvu', 'Robert', '', '', '', 0, 'bj2cQluSFIsm', '', '2021-08-29'),
 (24, 'test3@gmail.com', '$2y$10$Y68Q1ZUNbmzJMNehioZKDuIYKGXsb3aT5EKATqdG7AzxcpWDEjVYa', 0, 'Pirvu', 'Robert', '', '', '', 0, 'p7LcI42xGbTs', '', '2021-08-29'),
 (25, 'test4@gmail.com', '$2y$10$ZIPtICtr0B4hDTYlIFwoAONV2HQ68hfTEqQidDwyJtZ.pNBKwEYSO', 0, 'Pirvu', 'Robert', '', '', '', 0, '3rHhfdab2PU6', '', '2021-08-29'),
 (26, 'test5@gmail.com', '$2y$10$kRZCCOhMaGfyrZpaZxzNPeyoo1feqxJF54MgYmhizXO7bc7XXjU2W', 0, 'Pirvu', 'Robert', '', '', '', 0, '5iDIz9BpaANm', '', '2021-08-29'),
-(28, 'test55@gmail.com', '$2y$10$f5vJXzXB68MWwi3JBni9yuAlMKZYryCuF5z48V5X7QwKOF2aRI9RK', 0, 'Pirvu', 'Robert', '', '', '', 0, '6QGUjO4NLmuX', '', '2021-08-29'),
+(28, 'test55@gmail.com', '$2y$10$f5vJXzXB68MWwi3JBni9yuAlMKZYryCuF5z48V5X7QwKOF2aRI9RK', 0, 'Pirvu', 'Robert', '', '', '', 0, '6QGUjO4NLmuX', '', '2021-08-29')
 
 --
 -- Indexes for dumped tables
