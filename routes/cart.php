@@ -30,16 +30,18 @@ $app->delete('/deleteCart', function(Request $request, Response $response){
 	$quantity = 	$request->getParam('quantity');
 	$product_id = 	$request->getParam('product_id');
 
+	$sql = $conn->prepare("DELETE FROM cart WHERE user_id=:userid AND quantity=:quantity AND product_id=:product_id");
 
+	return "success";
 });
 
-$app->get('/detailsCart')
+// $app->get('/detailsCart');
 
-$app->get('/allCart')
+// $app->get('/allCart');
 
-$app->get('/totalCart')
+// $app->get('/totalCart');
 
-$app->update('/updateCart')
+// $app->update('/updateCart');
 
 
 

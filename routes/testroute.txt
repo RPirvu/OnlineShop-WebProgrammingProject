@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 use \Psr\Http\Message\ResponseInterface as Response;
 use \Psr\Http\Message\ServerRequestInterface as Request;
@@ -8,7 +8,7 @@ $app->get('/helo', function (Request $request, Response $reponse) {
     echo 'home user working';
 });
 
-<?php
+
 
 use \Psr\Http\Message\ResponseInterface as Response;
 use \Psr\Http\Message\ServerRequestInterface as Request;
@@ -42,11 +42,6 @@ $app->post("/foo", function ($request, $response) {
     print_r($data);
 });
 	
-
-
-
-
-<?php
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
@@ -110,5 +105,4 @@ $app->get('/friend/{id}', function(Request $request, Response $response, array $
     }
     
 });
-
-	
+ -->

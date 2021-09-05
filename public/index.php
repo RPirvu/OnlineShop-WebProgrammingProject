@@ -8,9 +8,12 @@ require '../config/conn.php';
 
 $app = new \Slim\App;
 
-require '../routes/testroute.php';
-require '../routes/test1.php';
-require '../routes/cartroutes.php';
+// require '../routes/testroute.php';
+// require '../routes/auth.php';
+require '../routes/cart.php';
+// require '../routes/category.php';
+// require '../routes/password.php';
+// require '../routes/product.php';
 
 $app->run();
 
