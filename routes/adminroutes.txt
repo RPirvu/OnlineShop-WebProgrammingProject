@@ -67,13 +67,13 @@ $app->post('/updatePhoto', function(Request $request, Response $response){
 
 
 
-addCategory
-deleteCategory/{categoryID}
-updateCategory/{categoryID}
+addCategory -
+deleteCategory/{categoryID} -
+updateCategory/{categoryID} -
 
-addProduct
-deleteProduct/{productID}
-updateProduct/{productID}
+addProduct -
+deleteProduct/{productID} -
+updateProduct/{productID} -
 getProducts
 
 validateUser
