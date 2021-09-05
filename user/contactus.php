@@ -19,9 +19,9 @@
             
             <div class="container">
                 <div class="col-md-6 contacts">
-                    <h1><span class="glyphicon glyphicon-user"></span> Mihoc Alexandru & Robert Parvu & Rautu Denis</h1>
+                    <h1><span class="glyphicon glyphicon-user"></span> Alex & Denis & Robert </h1>
                     <p>
-                        <span class="glyphicon glyphicon-envelope"></span> Email: <br>
+                        <span class="glyphicon glyphicon-envelope"></span> Email: adr@gmail.com <br>
                         <span class="glyphicon glyphicon-link"></span> Facebook:<br>
                         <span class="glyphicon glyphicon-phone"></span> Mobile: 
                     </p>
