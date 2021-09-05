@@ -730,7 +730,7 @@
 	* tools/generate/TrueType,
 	  tools/generate/WOFF,
 	  tools/generate/OpenType,
-	  tools/generate/buildutils.py,
+	  tools/generate/vendor/buildutils.py,
 	  tools/generate/MacTT: Updated copyrights
 
 2012-03-09 16:49 +0000 [r2136]  Stevan_White:
@@ -2122,7 +2122,7 @@
 	  tools/generate/OpenType,
 	  tools/generate/MacTT: vim-style file type comment
 
-	* tools/generate/buildutils.py: Version string to
+	* tools/generate/vendor/buildutils.py: Version string to
 	  comply with OpenType recommendation.
 
 2011-12-01 18:37 +0000 [r1918]  Stevan_White:
@@ -2670,24 +2670,24 @@
 
 	* tools/generate/TrueType,
 	  tools/generate/OpenType,
-	  tools/generate/buildutils.py,
+	  tools/generate/vendor/buildutils.py,
 	  tools/generate/MacTT: Again trying to set keywords
 
 	* tools/generate/TrueType,
 	  tools/generate/OpenType,
-	  tools/generate/buildutils.py,
+	  tools/generate/vendor/buildutils.py,
 	  tools/generate/MacTT: Added Date svn keyword
 
 	* tools/generate/TrueType,
 	  tools/generate/OpenType,
-	  tools/generate/buildutils.py,
+	  tools/generate/vendor/buildutils.py,
 	  tools/generate/MacTT: Added Revision keyword
 
 2011-10-25 21:13 +0000 [r1821]  Stevan_White:
 
 	* tools/generate/TrueType,
 	  tools/generate/OpenType,
-	  tools/generate/buildutils.py (added),
+	  tools/generate/vendor/buildutils.py (added),
 	  tools/generate/MacTT: Implemented cleaned-up
 	  Revision string
 

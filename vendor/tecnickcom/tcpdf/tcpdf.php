@@ -14492,7 +14492,7 @@ class TCPDF {
 			$patch_array = $coords;
 		}
 		$bpcd = 65535; //16 bits per coordinate
-		//build the data stream
+		//vendor/build the data stream
 		$this->gradients[$n]['stream'] = '';
 		$count_patch = count($patch_array);
 		for ($i=0; $i < $count_patch; ++$i) {

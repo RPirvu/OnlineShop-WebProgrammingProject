@@ -24,7 +24,7 @@
           <ul class="dropdown-menu">
             <!-- User image -->
             <li class="user-header">
-              <img src="<?php echo (!empty($admin['photo'])) ? '../images/'.$admin['photo'] : '../images/profile.jpg'; ?>" class="img-circle" alt="User Image">
+              <img src="<?php echo (!empty($admin['photo'])) ? '../database/images/'.$admin['photo'] : '../database/images/profile.jpg'; ?>" class="img-circle" alt="User Image">
 
               <p>
                 <?php echo $admin['firstname'].' '.$admin['lastname']; ?>
@@ -36,7 +36,7 @@
                 <a href="#profile" data-toggle="modal" class="btn btn-default btn-flat" id="admin_profile">Update</a>
               </div>
               <div class="pull-right">
-                <a href="../logout.php" class="btn btn-default btn-flat">Sign out</a>
+                <a href="../user/logout.php" class="btn btn-default btn-flat">Sign out</a>
               </div>
             </li>
           </ul>

@@ -67,7 +67,7 @@
                       $stmt = $conn->prepare("SELECT * FROM users WHERE type=:type");
                       $stmt->execute(['type'=>0]);
                       foreach($stmt as $row){
-                        $image = (!empty($row['photo'])) ? '../images/'.$row['photo'] : '../images/profile.jpg';
+                        $image = (!empty($row['photo'])) ? '../database/images/'.$row['photo'] : '../database/images/profile.jpg';
                         $status = ($row['status']) ? '<span class="label label-success">active</span>' : '<span class="label label-danger">not verified</span>';
                         $active = (!$row['status']) ? '<span class="pull-right"><a href="#activate" class="status" data-toggle="modal" data-id="'.$row['id'].'"><i class="fa fa-check-square-o"></i></a></span>' : '';
                         echo "

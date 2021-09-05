@@ -1,4 +1,4 @@
-<footer class="main-footer">
+<footer class="main-footer" style="background-color: darkgray">
     <div class="pull-right hidden-xs">
       <b>Restanță PW</b>
     </div>

@@ -4,7 +4,7 @@
 
 	if(isset($_POST['add'])){
 		$name = $_POST['name'];
-		$slug = slugify($name);
+		// $slug = slugify($name);
 		$category = $_POST['category'];
 		$price = $_POST['price'];
 		$description = $_POST['description'];

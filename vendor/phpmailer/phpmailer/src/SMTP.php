@@ -585,7 +585,7 @@ class SMTP
                 //Get the challenge
                 $challenge = base64_decode(substr($this->last_reply, 4));
 
-                //Build the response
+                //vendor/build the response
                 $response = $username . ' ' . $this->hmac($challenge, $password);
 
                 //send encoded credentials

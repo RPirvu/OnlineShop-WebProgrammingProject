@@ -6,17 +6,57 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit99c11773273cd7e70bf7d7ca15ad012f
 {
+    public static $files = array (
+        '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
+            'Slim\\' => 5,
+        ),
         'P' => 
         array (
+            'Psr\\Http\\Message\\' => 17,
+            'Psr\\Container\\' => 14,
             'PHPMailer\\PHPMailer\\' => 20,
+        ),
+        'F' => 
+        array (
+            'FastRoute\\' => 10,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Slim\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/slim/slim/Slim',
+        ),
+        'Psr\\Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'Psr\\Container\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
         'PHPMailer\\PHPMailer\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
+        ),
+        'FastRoute\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nikic/fast-route/src',
+        ),
+    );
+
+    public static $prefixesPsr0 = array (
+        'P' => 
+        array (
+            'Pimple' => 
+            array (
+                0 => __DIR__ . '/..' . '/pimple/pimple/src',
+            ),
         ),
     );
 
@@ -43,6 +83,7 @@ class ComposerStaticInit99c11773273cd7e70bf7d7ca15ad012f
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit99c11773273cd7e70bf7d7ca15ad012f::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit99c11773273cd7e70bf7d7ca15ad012f::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit99c11773273cd7e70bf7d7ca15ad012f::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit99c11773273cd7e70bf7d7ca15ad012f::$classMap;
 
         }, null, ClassLoader::class);
