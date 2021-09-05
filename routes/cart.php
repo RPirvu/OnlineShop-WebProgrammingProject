@@ -35,13 +35,18 @@ $app->delete('/deleteCart', function(Request $request, Response $response){
 	return "success";
 });
 
-// $app->get('/detailsCart');
+$app->get('/detailsCart', function(Request $request, Response $response){
+	$db = new Database();
+    $conn = $db->open();
 
-// $app->get('/allCart');
+// // $app->get('/allCart', function(Request $request, Response $response){
 
-// $app->get('/totalCart');
 
-// $app->update('/updateCart');
+// $app->get('/totalCart', function(Request $request, Response $response){
+
+
+// // $app->update('/updateCart', function(Request $request, Response $response){
+
 
 
 
