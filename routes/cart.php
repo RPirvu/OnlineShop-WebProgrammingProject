@@ -2,27 +2,43 @@
 
 use \Psr\Http\Message\ResponseInterface as Response;
 use \Psr\Http\Message\ServerRequestInterface as Request;
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
 
 $app->post('/addCart', function(Request $request, Response $response){
+    $log = new Logger('CartRoute');
+    $log->pushHandler(new StreamHandler('../app.log', Logger::DEBUG));
+    $log->info('POST AddCart request');
 
 	$userid = 		$request->getParam('id');
 	$quantity = 	$request->getParam('quantity');
 	$product_id = 	$request->getParam('product_id');
 
-	$db = new Database();
-    $conn = $db->open();
-
 	$sql = "INSERT INTO cart (user_id, product_id, quantity) VALUES ($userid, $product_id, $quantity)";
 
-	$stmt = $conn->query($sql);
-
-	$response = "success";
-
-	return $response;
+    try {
+        $stmt = $conn->query($sql);
+    
+        $db->close();
+        $response = "success";
+        return $response;
+    } catch (PDOException $e){
+        $error = array(
+            "message" => $e->getMessage()
+        );
+        $log->error('ERROR: AddCart');
+        $response->getBody()->write(json_encode($error));
+        return $response
+            ->withHeader('content-type', 'application/json')
+            ->withStatus(500);
+    }
 
 });
 
 $app->delete('/deleteCart', function(Request $request, Response $response){
+    $log = new Logger('CartRoute');
+    $log->pushHandler(new StreamHandler('../app.log', Logger::DEBUG));
+    $log->info('DELETE DeleteCart request');
 
     $userid = 		$request->getParam('id');
 	$quantity = 	$request->getParam('quantity');
@@ -43,7 +59,7 @@ $app->delete('/deleteCart', function(Request $request, Response $response){
         $error = array(
             "message" => $e->getMessage()
         );
-        
+        $log->error('ERROR: DeleteCart');
         $response->getBody()->write(json_encode($error));
         return $response
             ->withHeader('content-type', 'application/json')
@@ -53,6 +69,9 @@ $app->delete('/deleteCart', function(Request $request, Response $response){
 });
 
 $app->get('/detailsCart', function(Request $request, Response $response){
+    $log = new Logger('CartRoute');
+    $log->pushHandler(new StreamHandler('../app.log', Logger::DEBUG));
+    $log->info('GET DetailsCart request');
 
 	$userid = $request->getParam('id');
 
@@ -84,7 +103,7 @@ $app->get('/detailsCart', function(Request $request, Response $response){
         $error = array(
             "message" => $e->getMessage()
         );
-        
+        $log->error('ERROR: DetailsCart');
         $response->getBody()->write(json_encode($error));
         return $response
             ->withHeader('content-type', 'application/json')
@@ -98,6 +117,9 @@ $app->get('/detailsCart', function(Request $request, Response $response){
 // });
 
 $app->get('/totalCart', function(Request $request, Response $response){ 
+    $log = new Logger('CartRoute');
+    $log->pushHandler(new StreamHandler('../app.log', Logger::DEBUG));
+    $log->info('GET TotalCart request');
 
 	$userid = $request->getParam('id');
 
@@ -118,7 +140,7 @@ $app->get('/totalCart', function(Request $request, Response $response){
         $error = array(
             "message" => $e->getMessage()
         );
-        
+        $log->error('ERROR: TotalCart');
         $response->getBody()->write(json_encode($error));
         return $response
             ->withHeader('content-type', 'application/json')
@@ -131,6 +153,9 @@ $app->get('/totalCart', function(Request $request, Response $response){
 
 
 $app->put('/updateCart', function(Request $request, Response $response){
+    $log = new Logger('CartRoute');
+    $log->pushHandler(new StreamHandler('../app.log', Logger::DEBUG));
+    $log->info('UPDATE UpdateCart request');
 
 
 	$userid = $request->getParam('id');
@@ -151,7 +176,7 @@ $app->put('/updateCart', function(Request $request, Response $response){
         $error = array(
             "message" => $e->getMessage()
         );
-        
+        $log->error('ERROR: UpdateCart');
         $response->getBody()->write(json_encode($error));
         return $response
             ->withHeader('content-type', 'application/json')
