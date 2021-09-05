@@ -13,9 +13,11 @@
         <ul class="nav navbar-nav">
           <li><a href="../user/index.php">HOME</a></li>
           <li><a href="../user/contactus.php">CONTACT US</a></li>
+          <li><a href="../user/AFrame.html">A-Frame</a></li>
           <li class="dropdown">
             <a href="http://localhost:8081/category" class="dropdown-toggle" data-toggle="dropdown">CATEGORY <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
+          
               <?php
              
                 $conn = $pdo->open();
