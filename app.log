@@ -45,3 +45,5 @@
 [2021-09-05T20:42:52.919863+02:00] AdminRoute.INFO: UPDATE Category requestTO [] []
 [2021-09-05T20:42:52.922507+02:00] AdminRoute.ERROR: ERROR: ADD Category [] []
 [2021-09-05T20:43:03.394731+02:00] AdminRoute.INFO: UPDATE Category request12TO2 [] []
+[2021-09-05T22:24:05.605719+02:00] AdminProductRoute.INFO: GET Products request [] []
+[2021-09-05T22:24:55.123982+02:00] AdminProductRoute.INFO: GET Products request [] []
