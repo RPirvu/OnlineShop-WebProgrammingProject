@@ -1,0 +1,82 @@
+$app->post('/addCategory', function(Request $request, Response $response){
+
+    $db = new Database();
+    $conn = $db->open();
+
+$app->post('/deleteCategory/{categoryID}', function(Request $request, Response $response){
+
+    $db = new Database();
+    $conn = $db->open();
+
+$app->post('/updateCategory/{categoryID}', function(Request $request, Response $response){
+
+    $db = new Database();
+    $conn = $db->open();
+
+
+
+$app->post('/addProduct', function(Request $request, Response $response){
+
+    $db = new Database();
+    $conn = $db->open();
+
+$app->post('/deleteProduct/{productID}', function(Request $request, Response $response){ 
+
+    $db = new Database();
+    $conn = $db->open();   
+
+$app->post('/updateProduct/{productID}', function(Request $request, Response $response){
+
+    $db = new Database();
+    $conn = $db->open();
+
+$app->post('/getProducts', function(Request $request, Response $response){
+
+    $db = new Database();
+    $conn = $db->open();
+
+
+
+$app->post('/validateUser', function(Request $request, Response $response){
+
+    $db = new Database();
+    $conn = $db->open();
+
+$app->post('/addUser', function(Request $request, Response $response){
+
+    $db = new Database();
+    $conn = $db->open();
+
+$app->post('/updateUser', function(Request $request, Response $response){
+
+    $db = new Database();
+    $conn = $db->open();
+
+$app->post('/updatePhoto', function(Request $request, Response $response){
+
+    $db = new Database();
+    $conn = $db->open();
+
+
+
+
+
+
+
+
+
+
+
+addCategory
+deleteCategory/{categoryID}
+updateCategory/{categoryID}
+
+addProduct
+deleteProduct/{productID}
+updateProduct/{productID}
+getProducts
+
+validateUser
+addUser
+updateUser
+updateUserPhoto

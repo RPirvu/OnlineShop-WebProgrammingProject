@@ -2,5 +2,11 @@
 
 $app->get('/getProduct', function(Request $request, Response $response) {
 
+    $db = new Database();
+    $conn = $db->open();
+
 $app->get('/getProduct/{id}', function(Request $request, Response $response) {
+
+    $db = new Database();
+    $conn = $db->open();
 

@@ -1,4 +1,10 @@
 
 $app->get('/login', function(Request $request, Response $response){
 
+    $db = new Database();
+    $conn = $db->open();
+
 $app->get('/logout', function(Request $request, Response $response){
+
+    $db = new Database();
+    $conn = $db->open();

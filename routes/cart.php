@@ -35,9 +35,12 @@ $app->delete('/deleteCart', function(Request $request, Response $response){
 	return "success";
 });
 
-$app->get('/detailsCart', function(Request $request, Response $response){
-	$db = new Database();
-    $conn = $db->open();
+// $app->get('/detailsCart', function(Request $request, Response $response){
+// 	$db = new Database();
+//     $conn = $db->open();
+
+// 	$userid = 		$request->getParam('id');
+// 	$product_id = 	$request->getParam('product_id');
 
 // // $app->get('/allCart', function(Request $request, Response $response){
 
