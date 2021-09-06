@@ -74,8 +74,9 @@ $app->delete('/deleteCategory/{categoryID}', function(Request $request, Response
 });
 
 $app->put('/updateCategory', function(Request $request, Response $response){
+
     $id = $request->getParam('categoryID'); 
-    $name = $request->getParam('name'); 
+    $name = $request->getParam('categoryNAME'); 
 
     $log = new Logger('AdminCategoryRoute');
     $log->pushHandler(new StreamHandler('../app.log', Logger::DEBUG));
