@@ -74,8 +74,9 @@ $app->delete('/deleteCategory/{categoryID}', function(Request $request, Response
 });
 
 $app->put('/updateCategory', function(Request $request, Response $response){
+
     $id = $request->getParam('categoryID'); 
-    $name = $request->getParam('name'); 
+    $name = $request->getParam('categoryNAME'); 
 
     $log = new Logger('AdminCategoryRoute');
     $log->pushHandler(new StreamHandler('../app.log', Logger::DEBUG));
@@ -278,7 +279,7 @@ $app->put('/validateUser/{id}', function(Request $request, Response $response, a
 }
 });
 
-$stmt = $conn->prepare("INSERT INTO users (email, password, firstname, lastname, address, contact_info, photo, status, created_on) VALUES (:email, :password, :firstname, :lastname, :address, :contact, :photo, :status, :created_on)");
+// $stmt = $conn->prepare("INSERT INTO users (email, password, firstname, lastname, address, contact_info, photo, status, created_on) VALUES (:email, :password, :firstname, :lastname, :address, :contact, :photo, :status, :created_on)");
 			
 $app->post('/addUser', function(Request $request, Response $response){
 
