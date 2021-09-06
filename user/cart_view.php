@@ -157,7 +157,7 @@ function getTotal(){
 <!-- Paypal Express -->
 <script>
 paypal.Button.render({
-    env: 'sandbox', // change for production if app is live,
+    env: 'sandbox', 
 
 	client: {
         sandbox:    'ASb1ZbVxG5ZFzCWLdYLi_d1-k5rmSjvBZhxP2etCxBKXaJHxPba13JJD_D3dTNriRbAv3Kp_72cgDvaZ',
