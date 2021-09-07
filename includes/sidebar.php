@@ -47,11 +47,11 @@
 	    	<h3 class='box-title'><b>Follow us on Social Media</b></h3>
 	  	</div>
 	  	<div class='box-body'>
-	    	<a class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
-	    	<a class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
-	    	<a class="btn btn-social-icon btn-instagram"><i class="fa fa-instagram"></i></a>
-	    	<a class="btn btn-social-icon btn-google"><i class="fa fa-google-plus"></i></a>
-	    	<a class="btn btn-social-icon btn-linkedin"><i class="fa fa-linkedin"></i></a>
+	    	<a class="btn btn-social-icon btn-facebook" a href="https://www.facebook.com/alexmihoc99/"><i class="fa fa-facebook"></i></a>
+	    	<a class="btn btn-social-icon btn-twitter" a href="https://twitter.com/?lang=ro"><i class="fa fa-twitter"></i></a>
+	    	<a class="btn btn-social-icon btn-instagram"a href="https://www.instagram.com/alexmihoc/"><i class="fa fa-instagram"></i></a>
+	    	<a class="btn btn-social-icon btn-google" a href="https://www.lipsum.com/"><i class="fa fa-google-plus"></i></a>
+	    	<a class="btn btn-social-icon btn-linkedin" a href="https://www.lipsum.com/"><i class="fa fa-linkedin"></i></a>
 	  	</div>
 	</div>
 </div>
