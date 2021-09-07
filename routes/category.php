@@ -5,7 +5,19 @@ use \Psr\Http\Message\ServerRequestInterface as Request;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
-$app->get('/category', function(Request $request, Response $response) {
+/**
+ * @OA\Info(title="Proiect PW", version="1.0")
+ */
+
+/**
+ * @OA\Get(
+ *     path="/category", tags={"TEST"},
+ *      description="Category",
+ *     @OA\Response(response="200", description="Success"), 
+ *     @OA\Response(response="404", description="Not Found")
+ * )
+ */
+$app->get('/cat', function(Request $request, Response $response) {
 	$category = $request->getParam('category');
 	$sql = "SELECT * FROM category";
 	$log = new Logger('CategoryRoute');

@@ -212,7 +212,8 @@ $app->put('/updateProduct/{productID}{name}', function(Request $request, Respons
 
 
 $app->get('/getProducts', function(Request $request, Response $response){
-    $log = new Logger('AdminProductRoute');
+    
+	$log = new Logger('AdminProductRoute');
     $log->pushHandler(new StreamHandler('../app.log', Logger::DEBUG));
     $log->info('GET Products request');
 

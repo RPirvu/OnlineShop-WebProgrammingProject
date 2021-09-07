@@ -116,38 +116,7 @@ $app->get('/detailsCart', function(Request $request, Response $response){
 	// $sql = "SELECT * FROM cart LEFT JOIN products ON products.id=cart.product_id LEFT JOIN category ON category.id=products.category_id WHERE user_id=:$userid";
 // });
 
-$app->get('/totalCart', function(Request $request, Response $response){ 
-    $log = new Logger('CartRoute');
-    $log->pushHandler(new StreamHandler('../app.log', Logger::DEBUG));
-    $log->info('GET TotalCart request');
 
-	$userid = $request->getParam('id');
-
-	$sql = "SELECT * FROM cart LEFT JOIN products on products.id=cart.product_id WHERE user_id=$userid";
-	
-	try {
-        $db = new Database();
-        $conn = $db->open();
-
-        $stmt = $conn->query($sql);
-		$allcart = $stmt->fetchAll(PDO::FETCH_OBJ);
-        $response->getBody()->write(json_encode($allcart));
-
-        return $response
-            ->withHeader('content-type', 'application/json')
-            ->withStatus(200); 
-    } catch (PDOException $e){
-        $error = array(
-            "message" => $e->getMessage()
-        );
-        $log->error('ERROR: TotalCart');
-        $response->getBody()->write(json_encode($error));
-        return $response
-            ->withHeader('content-type', 'application/json')
-            ->withStatus(500);
-    }
-    
-});
 
 
 

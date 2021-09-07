@@ -5,7 +5,7 @@ use \Psr\Http\Message\ServerRequestInterface as Request;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
-$app->get('/getProduct/{id}', function(Request $request, Response $response, array $args) {
+$app->get('/getProduct', function(Request $request, Response $response, array $args) {
     $id = $request->getParam('id');
     $sql = "SELECT *, products.name AS prodname, category.name AS catname, products.id AS prodid FROM products LEFT JOIN category ON category.id=products.category_id WHERE products.id = :id";
     
@@ -19,7 +19,7 @@ $app->get('/getProduct/{id}', function(Request $request, Response $response, arr
             $conn = $db->open();
         
             $stmt = $conn->prepare($sql);
-            $stmt->execute(['id' => $args['id']]);
+            $stmt->execute(['id' => $id ]);
 
             $allcart = $stmt->fetchAll(PDO::FETCH_OBJ);
             $response->getBody()->write(json_encode($allcart));
