@@ -6,7 +6,7 @@
         <title>PW</title>
     </head>
     <body class="hold-transition skin-blue layout-top-nav">
-        <div class = "wrapper">
+        <div class = "content-wrappers">
             <?php include '../includes/navbar.php'; ?>
                 </div>
             </div>

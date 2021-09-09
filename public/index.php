@@ -37,6 +37,7 @@ $app->get('/openapi', function ($request, $response, $args) {
  * @OA\Get(
  *     path="/ProiectPW/public/index.php/", tags={"Test - Route"},
  *     description="Home page",
+ *     summary="First Route - Test Route",
  *     @OA\Response(response="default", description="Welcome page")
  * )
  */
@@ -52,7 +53,7 @@ $app->get('/', function(Request $request, Response $response) {
  
 /**
  * @OA\Get( path="/ProiectPW/public/index.php/getProducts", tags={"User - Routes"},
-    *      description="Category",
+    *      description="Get all products",
     *     @OA\Response(response="200", description="Success"), 
     *     @OA\Response(response="404", description="Not Found")
     * )
@@ -91,7 +92,7 @@ $app->get('/getProducts', function(Request $request, Response $response){
 
 /**
  * @OA\Get( path="/ProiectPW/public/index.php/getProduct", tags={"User - Routes"},
-    *      description="Get Product's informations",
+    *      description="Get a Product's informations",
     *     @OA\Parameter(
     *         description="Product ID",
     *         in="query",
@@ -143,45 +144,44 @@ $app->get('/getProduct', function(Request $request, Response $response, array $a
 });
 
 /**
- * @OA\Post(
- *     path="/ProiectPW/public/index.php/addCart", tags={"User - Routes"},
- *      description="Get Product's informations",
- *     @OA\Parameter(
- *         description="User ID",
- *         in="query",
- *         name="UserID",
- *         required=true,
- *         @OA\Schema(
- *           type="integer",
- *           format="int64"
- *         ),
- *         @OA\Examples(example="int", value="14", summary="Test User"),
- *     ),
- *     @OA\Parameter(
- *         description="Product ID",
- *         in="query",
- *         name="ProductID",
- *         required=true,
- *         @OA\Schema(
- *           type="integer",
- *           format="int64"
- *         ),
- *         @OA\Examples(example="int", value="31", summary="Laptop - Acer Nitro"),
- *     ),
- *     @OA\Parameter(
- *         description="Quantity",
- *         in="query",
- *         name="quantity",
- *         required=true,
- *         @OA\Schema(
- *           type="integer",
- *           format="int64"
- *         ),
- *         @OA\Examples(example="int", value="5", summary="int val"),
- *     ),
- *@OA\Response(response="200", description="Success"), 
- *@OA\Response(response="404", description="Not Found")
- * )
+ * @OA\Post( path="/ProiectPW/public/index.php/addCart", tags={"User - Routes"},
+    *      description="Add Product to Cart",
+    *     @OA\Parameter(
+    *         description="User ID",
+    *         in="query",
+    *         name="UserID",
+    *         required=true,
+    *         @OA\Schema(
+    *           type="integer",
+    *           format="int64"
+    *         ),
+    *         @OA\Examples(example="int", value="14", summary="Test User"),
+    *     ),
+    *     @OA\Parameter(
+    *         description="Product ID",
+    *         in="query",
+    *         name="ProductID",
+    *         required=true,
+    *         @OA\Schema(
+    *           type="integer",
+    *           format="int64"
+    *         ),
+    *         @OA\Examples(example="int", value="31", summary="Laptop - Acer Nitro"),
+    *     ),
+    *     @OA\Parameter(
+    *         description="Quantity",
+    *         in="query",
+    *         name="quantity",
+    *         required=true,
+    *         @OA\Schema(
+    *           type="integer",
+    *           format="int64"
+    *         ),
+    *         @OA\Examples(example="int", value="5", summary="int val"),
+    *     ),
+    *@OA\Response(response="200", description="Success"), 
+    *@OA\Response(response="404", description="Not Found")
+    * )
  */
 $app->post('/addCart', function(Request $request, Response $response){
     $log = new Logger('CartRoute');
@@ -217,45 +217,44 @@ $app->post('/addCart', function(Request $request, Response $response){
 });
 
 /**
- * @OA\Delete(
- *     path="/ProiectPW/public/index.php/deleteCart", tags={"User - Routes"},
- *      description="Get Product's informations",
- *     @OA\Parameter(
- *         description="User ID",
- *         in="query",
- *         name="UserID",
- *         required=true,
- *         @OA\Schema(
- *           type="integer",
- *           format="int64"
- *         ),
- *         @OA\Examples(example="int", value="14", summary="Test User"),
- *     ),
- *     @OA\Parameter(
- *         description="Product ID",
- *         in="query",
- *         name="ProductID",
-  *         required=true,
-  *         @OA\Schema(
-  *           type="integer",
- *           format="int64"
- *         ),
- *         @OA\Examples(example="int", value="31", summary="Laptop - Acer Nitro"),
- *     ),
- *     @OA\Parameter(
- *         description="Quantity",
- *         in="query",
- *         name="quantity",
- *         required=true,
- *         @OA\Schema(
- *           type="integer",
- *           format="int64"
- *         ),
- *         @OA\Examples(example="int", value="5", summary="int val"),
- *     ),
- *@OA\Response(response="200", description="Success"), 
- *@OA\Response(response="404", description="Not Found")
- * )
+ * @OA\Delete( path="/ProiectPW/public/index.php/deleteCart", tags={"User - Routes"},
+    *      description="Delete Product from Cart",
+    *     @OA\Parameter(
+    *         description="User ID",
+    *         in="query",
+    *         name="UserID",
+    *         required=true,
+    *         @OA\Schema(
+    *           type="integer",
+    *           format="int64"
+    *         ),
+    *         @OA\Examples(example="int", value="14", summary="Test User"),
+    *     ),
+    *     @OA\Parameter(
+    *         description="Product ID",
+    *         in="query",
+    *         name="ProductID",
+    *         required=true,
+    *         @OA\Schema(
+    *           type="integer",
+    *           format="int64"
+    *         ),
+    *         @OA\Examples(example="int", value="31", summary="Laptop - Acer Nitro"),
+    *     ),
+    *     @OA\Parameter(
+    *         description="Quantity",
+    *         in="query",
+    *         name="quantity",
+    *         required=true,
+    *         @OA\Schema(
+    *           type="integer",
+    *           format="int64"
+    *         ),
+    *         @OA\Examples(example="int", value="1", summary="Decrease by 1"),
+    *     ),
+    *@OA\Response(response="200", description="Success"), 
+    *@OA\Response(response="404", description="Not Found")
+    * )
  */
 $app->delete('/deleteCart', function(Request $request, Response $response){
     $log = new Logger('CartRoute');
@@ -291,34 +290,33 @@ $app->delete('/deleteCart', function(Request $request, Response $response){
 });
 
 /**
- * @OA\Put(
- *     path="/ProiectPW/public/index.php/updateCart", tags={"User - Routes"},
- *      description="Get Product's informations",
- *     @OA\Parameter(
- *         description="Cart ID",
- *         in="query",
- *         name="CartID",
- *         required=true,
- *         @OA\Schema(
- *           type="integer",
- *           format="int64"
- *         ),
- *         @OA\Examples(example="int", value="1000", summary="Test Cart "),
- *     ),
- *     @OA\Parameter(
- *         description="Quantity",
- *         in="query",
- *         name="quantity",
- *         required=true,
- *         @OA\Schema(
- *           type="integer",
- *           format="int64"
- *         ),
- *         @OA\Examples(example="int", value="50", summary="int value"),
- *     ),
- *@OA\Response(response="200", description="Success"), 
- *@OA\Response(response="404", description="Not Found")
- * )
+ * @OA\Put( path="/ProiectPW/public/index.php/updateCart", tags={"User - Routes"},
+    *      description="Update Quantity of a Product",
+    *     @OA\Parameter(
+    *         description="Cart ID",
+    *         in="query",
+    *         name="CartID",
+    *         required=true,
+    *         @OA\Schema(
+    *           type="integer",
+    *           format="int64"
+    *         ),
+    *         @OA\Examples(example="int", value="1000", summary="Test Cart "),
+    *     ),
+    *     @OA\Parameter(
+    *         description="Quantity",
+    *         in="query",
+    *         name="quantity",
+    *         required=true,
+    *         @OA\Schema(
+    *           type="integer",
+    *           format="int64"
+    *         ),
+    *         @OA\Examples(example="int", value="50", summary="int value"),
+    *     ),
+    *@OA\Response(response="200", description="Success"), 
+    *@OA\Response(response="404", description="Not Found")
+    * )
  */
 $app->put('/updateCart', function(Request $request, Response $response){
     $log = new Logger('CartRoute');
@@ -354,23 +352,22 @@ $app->put('/updateCart', function(Request $request, Response $response){
 });
 
 /**
- * @OA\Get(
- *     path="/ProiectPW/public/index.php/totalCart", tags={"User - Routes"},
- *      description="Cart",
- *     @OA\Parameter(
- *         description="User ID",
- *         in="query",
- *         name="id",
- *         required=true,
- *         @OA\Schema(
- *           type="integer",
- *           format="int64"
- *         ),
- *        @OA\Examples(example="int", value="14", summary="Test User"),
- *     ),
- *@OA\Response(response="200", description="Success"), 
- *@OA\Response(response="404", description="Not Found")
- * )
+ * @OA\Get( path="/ProiectPW/public/index.php/totalCart", tags={"User - Routes"},
+    *      description="All Products in a User's Cart",
+    *     @OA\Parameter(
+    *         description="User ID",
+    *         in="query",
+    *         name="id",
+    *         required=true,
+    *         @OA\Schema(
+    *           type="integer",
+    *           format="int64"
+    *         ),
+    *        @OA\Examples(example="int", value="14", summary="Test User"),
+    *     ),
+    *@OA\Response(response="200", description="Success"), 
+    *@OA\Response(response="404", description="Not Found")
+    * )
  */
 $app->get('/totalCart', function(Request $request, Response $response){ 
     $log = new Logger('CartRoute');
@@ -406,12 +403,11 @@ $app->get('/totalCart', function(Request $request, Response $response){
 });
 
 /**
- * @OA\Get(
- *     path="/ProiectPW/public/index.php/category", tags={"User - Routes"},
- *      description="All Categories",
- *@OA\Response(response="200", description="Success"), 
- *@OA\Response(response="404", description="Not Found")
- * )
+ * @OA\Get( path="/ProiectPW/public/index.php/category", tags={"User - Routes"},
+    *      description="Get All Categories",
+    *@OA\Response(response="200", description="Success"), 
+    *@OA\Response(response="404", description="Not Found")
+    * )
  */
 $app->get('/category', function(Request $request, Response $response) {
 	$sql = "SELECT * FROM category";
@@ -451,22 +447,21 @@ $app->get('/category', function(Request $request, Response $response) {
 
                 //CATEGORY MANAGEMENT
 /**
- * @OA\Post(
- *     path="/ProiectPW/public/index.php/addCategory", tags={"Admin - Routes"},
- *      description="Cart",
- *     @OA\Parameter(
- *         description="Category Name",
- *         in="query",
- *         name="name",
- *         required=true,
- *         @OA\Schema(
- *           type="string",
- *         ),
- *        @OA\Examples(example="string", value="Test Category", summary="Dummy Category"),
- *     ),
- *@OA\Response(response="200", description="Success"), 
- *@OA\Response(response="404", description="Not Found")
- * )
+ * @OA\Post( path="/ProiectPW/public/index.php/addCategory", tags={"Admin - Routes[Category Management]"},
+    *      description="Add a new Category",
+    *     @OA\Parameter(
+    *         description="Category Name",
+    *         in="query",
+    *         name="name",
+    *         required=true,
+    *         @OA\Schema(
+    *           type="string",
+    *         ),
+    *        @OA\Examples(example="string", value="Test Category", summary="Dummy Category"),
+    *     ),
+    *@OA\Response(response="200", description="Success"), 
+    *@OA\Response(response="404", description="Not Found")
+    * )
  */
 $app->post('/addCategory', function(Request $request, Response $response){
 	
@@ -500,23 +495,22 @@ $app->post('/addCategory', function(Request $request, Response $response){
 });
 
 /**
- * @OA\Delete(
- *     path="/ProiectPW/public/index.php/deleteCategory", tags={"Admin - Routes"},
- *      description="Cart",
- *     @OA\Parameter(
- *         description="Category ID",
- *         in="query",
- *         name="id",
- *         required=true,
- *         @OA\Schema(
- *           type="integer",
- *           format="int64"
- *         ),
- *        @OA\Examples(example="string", value="13", summary="Dummy Category"),
- *     ),
- *@OA\Response(response="200", description="Success"), 
- *@OA\Response(response="404", description="Not Found")
- * )
+ * @OA\Delete( path="/ProiectPW/public/index.php/deleteCategory", tags={"Admin - Routes[Category Management]"},
+    *      description="Delete Category",
+    *     @OA\Parameter(
+    *         description="Category ID",
+    *         in="query",
+    *         name="id",
+    *         required=true,
+    *         @OA\Schema(
+    *           type="integer",
+    *           format="int64"
+    *         ),
+    *        @OA\Examples(example="string", value="13", summary="Dummy Category"),
+    *     ),
+    *@OA\Response(response="200", description="Success"), 
+    *@OA\Response(response="404", description="Not Found")
+    * )
  */
 $app->delete('/deleteCategory', function(Request $request, Response $response){
     $id = $request->getParam('id');
@@ -550,32 +544,31 @@ $app->delete('/deleteCategory', function(Request $request, Response $response){
 });
 
 /**
- * @OA\Put(
- *     path="/ProiectPW/public/index.php/updateCategory", tags={"Admin - Routes"},
- *      description="Cart",
- *     @OA\Parameter(
- *         description="Category ID",
- *         in="query",
- *         name="CategoryID",
- *         required=true,
- *         @OA\Schema(
- *           type="integer",
- *         ),
- *        @OA\Examples(example="string", value="14", summary="Dummy Category"),
- *     ),
- *     @OA\Parameter(
- *         description="Category Name",
- *         in="query",
- *         name="CategoryNAME",
- *         required=true,
- *         @OA\Schema(
- *           type="string",
- *         ),
- *        @OA\Examples(example="string", value="Test", summary="Dummy Category"),
- *     ),
- *@OA\Response(response="200", description="Success"), 
- *@OA\Response(response="404", description="Not Found")
- * )
+ * @OA\Put( path="/ProiectPW/public/index.php/updateCategory", tags={"Admin - Routes[Category Management]"},
+    *      description="Rename a Category",
+    *     @OA\Parameter(
+    *         description="Category ID",
+    *         in="query",
+    *         name="CategoryID",
+    *         required=true,
+    *         @OA\Schema(
+    *           type="integer",
+    *         ),
+    *        @OA\Examples(example="string", value="14", summary="Dummy Category"),
+    *     ),
+    *     @OA\Parameter(
+    *         description="Category Name",
+    *         in="query",
+    *         name="CategoryNAME",
+    *         required=true,
+    *         @OA\Schema(
+    *           type="string",
+    *         ),
+    *        @OA\Examples(example="string", value="Test", summary="Dummy Category"),
+    *     ),
+    *@OA\Response(response="200", description="Success"), 
+    *@OA\Response(response="404", description="Not Found")
+    * )
  */
 $app->put('/updateCategory', function(Request $request, Response $response){
 
@@ -613,72 +606,71 @@ $app->put('/updateCategory', function(Request $request, Response $response){
                 //PRODUCT MANAGEMENT
 
 /**
- * @OA\Post(
- *     path="/ProiectPW/public/index.php/addProduct", tags={"Admin - Routes"},
- *      description="Cart",
- *     @OA\Parameter(
-    *         description="Category ID",
-    *         in="query",
-    *         name="CategoryID",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="integer",
-    *         ),
-    *        @OA\Examples(example="integer", value="2", summary="Desktop"),
-    *    ),
- *     @OA\Parameter(
-    *         description="Product Name",
-    *         in="query",
-    *         name="ProductNAME",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="string", value="TestProduct", summary="Dummy Product"),
+ * @OA\Post( path="/ProiectPW/public/index.php/addProduct", tags={"Admin - Routes[Product Management]"},
+    *      description="Add a new Product",
+    *     @OA\Parameter(
+        *         description="Category ID",
+        *         in="query",
+        *         name="CategoryID",
+        *         required=true,
+        *         @OA\Schema(
+        *           type="integer",
+        *         ),
+        *        @OA\Examples(example="integer", value="2", summary="Desktop / Dummy Category"),
+        *    ),
+    *     @OA\Parameter(
+        *         description="Product Name",
+        *         in="query",
+        *         name="ProductNAME",
+        *         required=true,
+        *         @OA\Schema(
+        *           type="string",
+        *         ),
+        *        @OA\Examples(example="string", value="TestProduct", summary="Dummy Product Name"),
+        *     ),
+    *     @OA\Parameter(
+        *         description="Product Description",
+        *         in="query",
+        *         name="ProductDESCRIPTION",
+        *         required=true,
+        *         @OA\Schema(
+        *           type="string",
+        *         ),
+        *        @OA\Examples(example="string", value="A DUMMY DESCRIPTION FOR A DUMMY PRODUCT", summary="Dummy Product Description"),
+        *     ),
+    *     @OA\Parameter(
+        *         description="Product Slug[lowercase and replace white spaces with '-' ]",
+        *         in="query",
+        *         name="ProductSLUG",
+        *         required=true,
+        *         @OA\Schema(
+        *           type="string",
+        *         ),
+        *        @OA\Examples(example="string", value="dummy-product", summary="slug for faster searching"),
+        *     ),
+    *      @OA\Parameter(
+        *         description="Product Price",
+        *         in="query",
+        *         name="ProductPRICE",
+        *         required=true,
+        *         @OA\Schema(
+        *           type="integer",
+        *         ),
+        *        @OA\Examples(example="integer", value="10", summary="Dummy Price"),
+        *     ),
+    *      @OA\Parameter(
+        *         description="Product Photo [Thumbnail]",
+        *         in="query",
+        *         name="ProductPHOTO",
+        *         required=true,
+        *         @OA\Schema(
+        *           type="string",
+        *         ),
+        *        @OA\Examples(example="string", value="noimage.jpg", summary="Dummy Photo"),
     *     ),
- *     @OA\Parameter(
-    *         description="Product Description",
-    *         in="query",
-    *         name="ProductDESCRIPTION",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="string", value="A DUMMY DESCRIPTION FOR A DUMMY PRODUCT", summary="Dummy Product"),
-    *     ),
- *     @OA\Parameter(
-    *         description="Product Slug",
-    *         in="query",
-    *         name="ProductSLUG",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="string", value="dummy-product", summary="slug for searching product"),
-    *     ),
- *      @OA\Parameter(
-    *         description="Product Price",
-    *         in="query",
-    *         name="ProductPRICE",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="integer",
-    *         ),
-    *        @OA\Examples(example="integer", value="10", summary="Dummy Price"),
-    *     ),
- *      @OA\Parameter(
-    *         description="Product Photo",
-    *         in="query",
-    *         name="ProductPHOTO",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="string", value="noimage.jpg", summary="Dummy Category"),
- *     ),
- *@OA\Response(response="200", description="Success"), 
- *@OA\Response(response="404", description="Not Found")
- * )
+    *@OA\Response(response="200", description="Success"), 
+    *@OA\Response(response="404", description="Not Found")
+    * )
  */
 $app->post('/addProduct', function(Request $request, Response $response){
 
@@ -720,23 +712,22 @@ $app->post('/addProduct', function(Request $request, Response $response){
 });
 
 /**
- * @OA\Delete(
- *     path="/ProiectPW/public/index.php/deleteProduct", tags={"Admin - Routes"},
- *      description="Cart",
- *     @OA\Parameter(
- *         description="Product ID",
- *         in="query",
- *         name="ProductID",
- *         required=true,
- *         @OA\Schema(
- *           type="integer",
- *           format="int64"
- *         ),
- *        @OA\Examples(example="string", value="51", summary="Dummy Category"),
- *     ),
- *@OA\Response(response="200", description="Success"), 
- *@OA\Response(response="404", description="Not Found")
- * )
+ * @OA\Delete( path="/ProiectPW/public/index.php/deleteProduct", tags={"Admin - Routes[Product Management]"},
+    *      description="Delete Product",
+    *     @OA\Parameter(
+    *         description="Product ID",
+    *         in="query",
+    *         name="ProductID",
+    *         required=true,
+    *         @OA\Schema(
+    *           type="integer",
+    *           format="int64"
+    *         ),
+    *        @OA\Examples(example="string", value="51", summary="Dummy Product ID"),
+    *     ),
+    *@OA\Response(response="200", description="Success"), 
+    *@OA\Response(response="404", description="Not Found")
+    * )
  */
 $app->delete('/deleteProduct', function(Request $request, Response $response){ 
     $productID = $request->getParam('ProductID');
@@ -770,32 +761,31 @@ $app->delete('/deleteProduct', function(Request $request, Response $response){
 });
 
 /**
- * @OA\Put(
- *     path="/ProiectPW/public/index.php/updateProduct", tags={"Admin - Routes"},
- *      description="Update product's name",
- *     @OA\Parameter(
- *         description="Product ID",
- *         in="query",
- *         name="ProductID",
- *         required=true,
- *         @OA\Schema(
- *           type="integer",
- *         ),
- *        @OA\Examples(example="string", value="50", summary="Dummy Category"),
- *     ),
- *     @OA\Parameter(
- *         description="Product Name",
- *         in="query",
- *         name="ProductNAME",
- *         required=true,
- *         @OA\Schema(
- *           type="string",
- *         ),
- *        @OA\Examples(example="string", value="Toscido 11", summary="Dummy Category"),
- *     ),
- *@OA\Response(response="200", description="Success"), 
- *@OA\Response(response="404", description="Not Found")
- * )
+ * @OA\Put( path="/ProiectPW/public/index.php/updateProduct", tags={"Admin - Routes[Product Management]"},
+    *      description="Update a product's name",
+    *     @OA\Parameter(
+    *         description="Product ID",
+    *         in="query",
+    *         name="ProductID",
+    *         required=true,
+    *         @OA\Schema(
+    *           type="integer",
+    *         ),
+    *        @OA\Examples(example="string", value="50", summary="Dummy Product ID"),
+    *     ),
+    *     @OA\Parameter(
+    *         description="Product Name",
+    *         in="query",
+    *         name="ProductNAME",
+    *         required=true,
+    *         @OA\Schema(
+    *           type="string",
+    *         ),
+    *        @OA\Examples(example="string", value="Toscido 11", summary="Dummy Product new Name"),
+    *     ),
+    *@OA\Response(response="200", description="Success"), 
+    *@OA\Response(response="404", description="Not Found")
+    * )
  */
 $app->put('/updateProduct', function(Request $request, Response $response){
 
@@ -833,22 +823,21 @@ $app->put('/updateProduct', function(Request $request, Response $response){
                 //USER MANAGEMENT
 
 /**
- * @OA\Put(
- *     path="/ProiectPW/public/index.php/validateUser", tags={"Admin - Routes"},
- *      description="Update product's name",
- *     @OA\Parameter(
- *         description="User ID",
- *         in="query",
- *         name="UserID",
- *         required=true,
- *         @OA\Schema(
- *           type="integer",
- *         ),
- *        @OA\Examples(example="string", value="15", summary="Dummy Category"),
- *     ),
- *@OA\Response(response="200", description="Success"), 
- *@OA\Response(response="404", description="Not Found")
- * )
+ * @OA\Put( path="/ProiectPW/public/index.php/validateUser", tags={"Admin - Routes[User Management]"},
+    *      description="Force-Validate a User",
+    *     @OA\Parameter(
+    *         description="User ID",
+    *         in="query",
+    *         name="UserID",
+    *         required=true,
+    *         @OA\Schema(
+    *           type="integer",
+    *         ),
+    *        @OA\Examples(example="string", value="15", summary="User"),
+    *     ),
+    *@OA\Response(response="200", description="Success"), 
+    *@OA\Response(response="404", description="Not Found")
+    * )
  */                
 $app->put('/validateUser', function(Request $request, Response $response){
     $id = $request->getParam('UserID');
@@ -859,14 +848,14 @@ $app->put('/validateUser', function(Request $request, Response $response){
 
 	$status = 1;
 
-    $sql = "UPDATE users SET status=$status WHERE id=$id";
+    $sql = "UPDATE users SET status=$status WHERE id=:id";
 
     try{
 		$db = new Database();
     	$conn = $db->open();
 
-        $stmt = $conn->query($sql);
-    
+        $stmt = $conn->prepare($sql);
+        $stmt->execute(['id'=>$id]);
         $db->close();
         $response = "success";
 		
@@ -883,135 +872,113 @@ $app->put('/validateUser', function(Request $request, Response $response){
             ->withStatus(500);
     }
 });
-
 /**
- * @OA\Post(
- *     path="/ProiectPW/public/index.php/addUser", tags={"Admin - Routes"},
- *      description="Cart",
- *     @OA\Parameter(
-    *         description="Email",
-    *         in="query",
-    *         name="UserEmail",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="string", value="testtest@gmail.com", summary="Dummy Data"),
-    *    ),
- *     @OA\Parameter(
-    *         description="Type",
-    *         in="query",
-    *         name="UserType",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="string", value="password", summary="Dummy Data"),
-    *     ),
- *     @OA\Parameter(
-    *         description="Password",
-    *         in="query",
-    *         name="UserPassword",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="string", value="password", summary="Dummy Data"),
-    *     ),
- *     @OA\Parameter(
-    *         description="User First Name",
-    *         in="query",
-    *         name="UserFName",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="Test", value="A DUMMY DESCRIPTION FOR A DUMMY PRODUCT", summary="Dummy Product"),
-    *     ),
- *     @OA\Parameter(
-    *         description="User First Name",
-    *         in="query",
-    *         name="UserLName",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="Test", value="A DUMMY DESCRIPTION FOR A DUMMY PRODUCT", summary="Dummy Product"),
-    *     ),
- *     @OA\Parameter(
-    *         description="Product Price",
-    *         in="query",
-    *         name="UserAdress",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="integer", value="10", summary="Dummy Price"),
-    *     ),
- *     @OA\Parameter(
-    *         description="Product Photo",
-    *         in="query",
-    *         name="UserContact",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="string", value="noimage.jpg", summary="Dummy Category"),
-    *     ),
- *     @OA\Parameter(
-    *         description="Product Photo",
-    *         in="query",
-    *         name="UserPhoto",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="string", value="noimage.jpg", summary="Dummy Category"),
-    *     ),
- *     @OA\Parameter(
-    *         description="Product Photo",
-    *         in="query",
-    *         name="UserStatus",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="string", value="noimage.jpg", summary="Dummy Category"),
-    *     ),
- *     @OA\Parameter(
-    *         description="Product Photo",
-    *         in="query",
-    *         name="UserActivateCode",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="string", value="noimage.jpg", summary="Dummy Category"),
-    *     ),
- *     @OA\Parameter(
-    *         description="Product Photo",
-    *         in="query",
-    *         name="UserResetCode",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="string", value="noimage.jpg", summary="Dummy Category"),
-    *     ),
- *     @OA\Parameter(
-    *         description="Product Photo",
-    *         in="query",
-    *         name="UserCreatedON",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="string", value="noimage.jpg", summary="Dummy Category"),
-    *     ),
- *@OA\Response(response="200", description="Success"), 
- *@OA\Response(response="404", description="Not Found")
- * )
- **/
+ * @OA\Post( path="/ProiectPW/public/index.php/addUser", tags={"Admin - Routes[User Management]"},
+    *      description="Add New User",
+    *     @OA\Parameter(
+        *         description="Email",
+        *         in="query",
+        *         name="UserEmail",
+        *         required=true,
+        *         @OA\Schema(
+        *           type="string",
+        *         ),
+        *        @OA\Examples(example="string", value="test.test@test.com", summary="Dummy Email"),
+        *    ),
+    *     @OA\Parameter(
+        *         description="Type [0 - Normal/ 1 - Admin]",
+        *         in="query",
+        *         name="UserType",
+        *         required=true,
+        *         @OA\Schema(
+        *           type="integer",
+        *         ),
+        *        @OA\Examples(example="integer", value="0", summary="Normal User")
+        *     ),
+    *     @OA\Parameter(
+        *         description="Password",
+        *         in="query",
+        *         name="UserPassword",
+        *         required=true,
+        *         @OA\Schema(
+        *           type="string",
+        *         ),
+        *        @OA\Examples(example="string", value="password", summary="Dummy Password"),
+        *     ),
+    *     @OA\Parameter(
+        *         description="User First Name",
+        *         in="query",
+        *         name="UserFName",
+        *         required=true,
+        *         @OA\Schema(
+        *           type="string",
+        *         ),
+        *        @OA\Examples(example="Test", value="Test", summary="Dummy's First Name"),
+        *     ),
+    *     @OA\Parameter(
+        *         description="User First Name",
+        *         in="query",
+        *         name="UserLName",
+        *         required=true,
+        *         @OA\Schema(
+        *           type="string",
+        *         ),
+        *        @OA\Examples(example="Test", value="Dummy", summary="Dummy's Last Name"),
+        *     ),
+    *     @OA\Parameter(
+        *         description="Adress[City, Country, Street...",
+        *         in="query",
+        *         name="UserAdress",
+        *         required=true,
+        *         @OA\Schema(
+        *           type="string",
+        *         ),
+        *        @OA\Examples(example="integer", value="Test City, Dummy Country, Street 12", summary="Dummy Adress"),
+        *     ),
+    *     @OA\Parameter(
+        *         description="User's Phone Number",
+        *         in="query",
+        *         name="UserContact",
+        *         required=true,
+        *         @OA\Schema(
+        *           type="string",
+        *         ),
+        *        @OA\Examples(example="string", value="021345678", summary="Dummy Phone Number"),
+        *     ),
+    *     @OA\Parameter(
+        *         description="User's Photo",
+        *         in="query",
+        *         name="UserPhoto",
+        *         required=false,
+        *         @OA\Schema(
+        *           type="string",
+        *         ),
+        *        @OA\Examples(example="string", value="noimage.jpg", summary=""),
+        *     ),
+    *     @OA\Parameter(
+        *         description="User's Status [0 - Not Verified | 1 - Verified]",
+        *         in="query",
+        *         name="UserStatus",
+        *         required=true,
+        *         @OA\Schema(
+        *           type="integer",
+        *         ),
+        *        @OA\Examples(example="integer", value="0", summary="Not Verified User"),
+        *     ),
+    *     @OA\Parameter(
+        *         description="Product Photo",
+        *         in="query",
+        *         name="UserCreatedON",
+        *         required=true,
+        *         @OA\Schema(
+        *           type="string",
+        *         ),
+        *        @OA\Examples(example="string", value="2021-01-01", summary="Dummy Category"),
+        *     ),
+    *@OA\Response(response="200", description="Success"), 
+    *@OA\Response(response="404", description="Not Found")
+    * )
+**/
 $app->post('/addUser', function(Request $request, Response $response){
 
 	$email = $request->getParam('UserEmail'); 
@@ -1023,8 +990,8 @@ $app->post('/addUser', function(Request $request, Response $response){
 	$contact_info = $request->getParam('UserContact'); 
 	$photo = $request->getParam('UserPhoto'); 
 	$status = $request->getParam('UserStatus'); 
-    $activate_code = $request->getParam('UserActivateCode'); 
-    $reset_code = $request->getParam('UserResetCode'); 
+    // $activate_code = $request->getParam('UserActivateCode'); 
+    // $reset_code = $request->getParam('UserResetCode'); 
 	$created_on = $request->getParam('UserCreatedON'); 
 
     $log = new Logger('AdminUserControlRoute');
@@ -1039,11 +1006,11 @@ $app->post('/addUser', function(Request $request, Response $response){
     	$conn = $db->open();
 
         $stmt = $conn->prepare("INSERT INTO users 
-			   (email, password, type, firstname, lastname, address, contact_info, photo, status, activate_code, reset_code, created_on) 
-		VALUES (:email, :password, :type, :firstname, :lastname, :address, :contact_info, :photo, :status, :activate_code, :reset_code, :created_on)");
+			   (email, password, type, firstname, lastname, address, contact_info, photo, status, created_on) 
+		VALUES (:email, :password, :type, :firstname, :lastname, :address, :contact_info, :photo, :status, :created_on)");
 
 
-        $stmt->execute(['email'=>$email,'password'=>$password,'type'=>$type,'firstname'=>$firstname,'lastname'=>$lastname,'address'=>$address,'contact_info'=>$contact_info,'photo'=>$photo,'status'=>$status,'activate_code'=>$activate_code,'reset_code'=>$reset_code,'created_on'=>$created_on,]);
+        $stmt->execute(['email'=>$email,'password'=>$password,'type'=>$type,'firstname'=>$firstname,'lastname'=>$lastname,'address'=>$address,'contact_info'=>$contact_info,'photo'=>$photo,'status'=>$status,'created_on'=>$created_on,]);
         
         $response = "success";
 		
@@ -1061,114 +1028,112 @@ $app->post('/addUser', function(Request $request, Response $response){
     }
 });
 
-
 /**
- * @OA\Put(
- *     path="/ProiectPW/public/index.php/updateUser", tags={"Admin - Routes"},
- *      description="Cart",
- *     @OA\Parameter(
-    *         description="Email",
-    *         in="query",
-    *         name="UserID",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="string", value="testtest@gmail.com", summary="Dummy Data"),
-    *    ),
- *     @OA\Parameter(
-    *         description="Email",
-    *         in="query",
-    *         name="UserEmail",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="string", value="testtest@gmail.com", summary="Dummy Data"),
-    *    ),
- *     @OA\Parameter(
-    *         description="Type",
-    *         in="query",
-    *         name="UserType",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="string", value="password", summary="Dummy Data"),
-    *     ),
- *     @OA\Parameter(
-    *         description="Password",
-    *         in="query",
-    *         name="UserPassword",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="string", value="password", summary="Dummy Data"),
-    *     ),
- *     @OA\Parameter(
-    *         description="User First Name",
-    *         in="query",
-    *         name="UserFName",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="Test", value="A DUMMY DESCRIPTION FOR A DUMMY PRODUCT", summary="Dummy Product"),
-    *     ),
- *     @OA\Parameter(
-    *         description="User First Name",
-    *         in="query",
-    *         name="UserLName",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="Test", value="A DUMMY DESCRIPTION FOR A DUMMY PRODUCT", summary="Dummy Product"),
-    *     ),
- *     @OA\Parameter(
-    *         description="Product Price",
-    *         in="query",
-    *         name="UserAdress",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="integer", value="10", summary="Dummy Price"),
-    *     ),
- *     @OA\Parameter(
-    *         description="Product Photo",
-    *         in="query",
-    *         name="UserContact",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="string", value="noimage.jpg", summary="Dummy Category"),
-    *     ),
- *     @OA\Parameter(
-    *         description="Product Photo",
-    *         in="query",
-    *         name="UserPhoto",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="string", value="noimage.jpg", summary="Dummy Category"),
-    *     ),
- *     @OA\Parameter(
-    *         description="Product Photo",
-    *         in="query",
-    *         name="UserStatus",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="string",
-    *         ),
-    *        @OA\Examples(example="string", value="noimage.jpg", summary="Dummy Category"),
-    *     ),
- *@OA\Response(response="200", description="Success"), 
- *@OA\Response(response="404", description="Not Found")
- * )
+ * @OA\Put( path="/ProiectPW/public/index.php/updateUser", tags={"Admin - Routes[User Management]"},
+    *      description="Update User's Details",
+    *     @OA\Parameter(
+        *         description="User's ID",
+        *         in="query",
+        *         name="UserID",
+        *         required=true,
+        *         @OA\Schema(
+        *           type="integer",
+        *         ),
+        *        @OA\Examples(example="integer", value="12", summary="Test ID"),
+        *    ),
+    *     @OA\Parameter(
+        *         description="New Email",
+        *         in="query",
+        *         name="UserEmail",
+        *         required=false,
+        *         @OA\Schema(
+        *           type="string",
+        *         ),
+        *        @OA\Examples(example="string", value="testtest@gmail.com", summary="Dummy Data"),
+        *    ),
+    *     @OA\Parameter(
+        *         description="New User's Type",
+        *         in="query",
+        *         name="UserType",
+        *         required=false,
+        *         @OA\Schema(
+        *           type="integer",
+        *         ),
+        *        @OA\Examples(example="integer", value="1", summary="Dummy Data"),
+        *     ),
+    *     @OA\Parameter(
+        *         description="Password",
+        *         in="query",
+        *         name="UserPassword",
+        *         required=false,
+        *         @OA\Schema(
+        *           type="string",
+        *         ),
+        *        @OA\Examples(example="string", value="password", summary="Dummy Data"),
+        *     ),
+    *     @OA\Parameter(
+        *         description="New User First Name",
+        *         in="query",
+        *         name="UserFName",
+        *         required=false,
+        *         @OA\Schema(
+        *           type="string",
+        *         ),
+        *        @OA\Examples(example="Test", value="NewUser", summary="Dummy Data"),
+        *     ),
+    *     @OA\Parameter(
+        *         description="New User Last Name",
+        *         in="query",
+        *         name="UserLName",
+        *         required=false,
+        *         @OA\Schema(
+        *           type="string",
+        *         ),
+        *        @OA\Examples(example="Test", value="Test", summary="Dummy Data"),
+        *     ),
+    *     @OA\Parameter(
+        *         description="New User Address",
+        *         in="query",
+        *         name="UserAdress",
+        *         required=false,
+        *         @OA\Schema(
+        *           type="string",
+        *         ),
+        *        @OA\Examples(example="string", value="New Street", summary="Dummy Data"),
+        *     ),
+    *     @OA\Parameter(
+        *         description="New Phone Number",
+        *         in="query",
+        *         name="UserContact",
+        *         required=false,
+        *         @OA\Schema(
+        *           type="string",
+        *         ),
+        *        @OA\Examples(example="string", value="1234567890", summary="Dummy Data"),
+        *     ),
+    *     @OA\Parameter(
+        *         description="New Photo",
+        *         in="query",
+        *         name="UserPhoto",
+        *         required=false,
+        *         @OA\Schema(
+        *           type="string",
+        *         ),
+        *        @OA\Examples(example="string", value="noimage.jpg", summary="Dummy Category"),
+        *     ),
+    *     @OA\Parameter(
+        *         description="New Status [0 - Not Verified | 1 - Verified]",
+        *         in="query",
+        *         name="UserStatus",
+        *         required=true,
+        *         @OA\Schema(
+        *           type="integer",
+        *         ),
+        *        @OA\Examples(example="integer", value="1", summary="Dummy Data"),
+        *     ),
+    *@OA\Response(response="200", description="Success"), 
+    *@OA\Response(response="404", description="Not Found")
+    * )
  **/
 $app->put('/updateUser', function(Request $request, Response $response){
     $id = $request->getParam('UserID'); 
@@ -1215,26 +1180,24 @@ $app->put('/updateUser', function(Request $request, Response $response){
     }
 });
 
-
 /**
- * @OA\Delete(
- *     path="/ProiectPW/public/index.php/deleteUser", tags={"Admin - Routes"},
- *      description="Cart",
- *     @OA\Parameter(
-    *         description="User ID",
-    *         in="query",
-    *         name="UserID",
-    *         required=true,
-    *         @OA\Schema(
-    *           type="integer",
-    *           format="int64"
-    *         ),
-    *        @OA\Examples(example="string", value="51", summary="Dummy Category"),
-    *     ),
- *@OA\Response(response="200", description="Success"), 
- *@OA\Response(response="404", description="Not Found")
- * )
- */
+* @OA\Delete( path="/ProiectPW/public/index.php/deleteUser", tags={"Admin - Routes[User Management]"},
+    *      description="Delete User",
+    *     @OA\Parameter(
+        *         description="User ID",
+        *         in="query",
+        *         name="UserID",
+        *         required=true,
+        *         @OA\Schema(
+        *           type="integer",
+        *           format="int64"
+        *         ),
+        *        @OA\Examples(example="string", value="51", summary="Dummy Data"),
+        *     ),
+    *@OA\Response(response="200", description="Success"), 
+    *@OA\Response(response="404", description="Not Found")
+    * )
+*/
 $app->delete('/deleteUser', function(Request $request, Response $response){
     $id = $request->getParam('UserID');
 	
